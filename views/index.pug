@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  ul.nav
+    li
+      a(href='/owner') Owner
+    li
+      a(href='/investor') Investor
+  h2 This is #{title} Page!
+  a(href='/') Go to Main Page
+  block page

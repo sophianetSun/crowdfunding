@@ -1,0 +1,24 @@
+extends index
+
+block page
+    // Todo: show Funded ETH
+    // Todo: show Goal ETH
+    div.box Funded: #{fundETH} ETH / Goal: #{goalETH} ETH
+
+    // Todo: show owner's address and ETH
+    div.box Owner's address: #{ownAddr} / #{ownETH} ETH
+
+    // Todo: show contract address and ETH, CTK(custom Token)
+    div.box Contract address: #{conAddr} / #{conETH} ETH / #{conCTK} CTK
+
+    // Todo: show status of funding "Ongoing" or "End"
+    div.box Funding Status: #{fundStatus}
+
+    // Todo: link to main page
+    // Done!
+
+    // Todo: button for withdraw if status End
+    button(type='button' id='withdraw' name='withdraw' onclick='location.href="./owner/withdraw"') withdraw
+    br
+    // Todo: Button for status of Funding (optional)
+    button(type='button' id='status' name='status' onclick='location.href=""') status

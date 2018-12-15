@@ -1,0 +1,30 @@
+extends index
+
+block page
+    // Todo: show funded ETH and goal
+    div.box Funded #{fundETH} ETH / #{goalETH} ETH
+
+    // Todo: show custom token to be given investor to participate funding
+    div.box CTK Remain: #{conCTK} CTK
+
+    // Todo: link to main page
+    // Done!
+
+    // Todo: button for link page join funding
+    button(type='button' id='join' name='join' onclick='location.href="investor/join"') Join CrowdFunding
+
+    if usrAddr
+        // Todo: show investor address, funded eth, token
+        div.box User's address: #{usrAddr} / #{usrETH} ETH / #{usrCTK} CTK
+
+    // Todo: withdraw investor's Funding ETH when funding is fail or exceeds goal
+    div.box If fail funding or not receive token withdraw invertor's ETH
+        br
+        button(id='withdraw' name='withdraw') withdraw
+
+    script.
+        var usrAddr = "#{usrAddr}".slice(2);
+        document.getElementById('withdraw').addEventListener('click', function() {
+            var pass = window.prompt("input your passphrase", usrAddr);
+            location.href = `/investor/withdraw?addr=${usrAddr}&pass=${pass}`;
+        });

@@ -1,0 +1,17 @@
+extends index
+
+block page
+    form(action='/investor/funding' method='post')
+        // Todo: set account address
+        select.box(id='address' name='address')
+            each val in addresses
+                option= val
+
+        // Todo: set amount ETH
+        input(type='number' id='amount' name='amount' placeholder='Amount (ETH)').box
+
+        // Todo: input passphase
+        input(type='text' id='passphase' name='passphase' placeholder='passphase').box
+
+        // Todo: button proceed funding
+        button(type='submit' id='fund' name='fund').box Funding!
